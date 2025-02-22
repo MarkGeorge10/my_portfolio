@@ -16,51 +16,59 @@ export default function Projects() {
         {
           id: 1,
           title: "AI-Driven News Intelligence Platform",
-          description: "Automated news aggregation and curation system with NLP.",
+          description: "This project delivers an automated news aggregation and curation system, combining web scraping, natural language processing (NLP), and user feedback mechanisms to streamline information consumption. The platform integrates two primary datapipelines: (1) a third-party integration with Inoreader API, where a Python-based scraper collects and processes news articles before marking them as read, and (2) a user-configurable RSS feed management system. Users can dynamically add or remove RSS feeds via a Next.js dashboard, with all feed metadata stored in PostgreSQL. The scraper service automatically discovers and processes new content from these feeds, ensuring continuous data ingestion.",
           image: [],
         },
         {
-          id: 2,
+            id: 2,
+            title: "NLP for Sermon Classification and Translation",
+            description: "Developed an advanced NLP pipeline to classify and translate church sermon videos. Leveraged OpenAI's Whisper model for speech-to-text transcription, enabling accurate extraction of sermon subtitles from YouTube videos. Built a custom NLP classification model to categorize sermons into one or more predefined categories (e.g., love, Bible study, etc.) from a list of 100+ topics. Additionally, implemented a translation module to convert sermon subtitles from English to multiple languages, including Arabic, Amharic, and Spanish. This project demonstrates expertise in NLP, machine learning, and multilingual text processing, providing a scalable solution for sermon organization and accessibility.",
+            image: [],
+          },
+        {
+          id: 3,
           title: "Intelligent Mancala Game",
           description: "AI-powered game using Minimax and Q-Learning.",
           image: [],
         },
         {
-          id: 3,
+          id: 4,
           title: "Medical Basket Analysis",
           description: "Medical test analysis using FP Growth model.",
           image: [],
         },
         {
-          id: 4,
+          id: 5,
           title: "PCR Analysis Project",
           description: "Analysis of PCR test distribution and results during Covid-19.",
           image: [],
         },
+        // {
+        //   id: 6,
+        //   title: "Lipid Medical Test",
+        //   description: "Predictable system using ANN to evaluate patient risk.",
+        //   image: [],
+        // },
         {
-          id: 5,
-          title: "Lipid Medical Test",
-          description: "Predictable system using ANN to evaluate patient risk.",
-          image: [],
-        },
-        {
-          id: 6,
+          id: 7,
           title: "Marketing Campaign Response Prediction",
           description: "Predictable system using ANN for targeted marketing campaigns.",
           image: [],
         },
+        // {
+        //   id: 8,
+        //   title: "Cyclitic Google Capstone Project",
+        //   description: "Analysis of bike-sharing data to convert casual riders to annual members.",
+        //   image: [],
+        // },
         {
-          id: 7,
-          title: "Cyclitic Google Capstone Project",
-          description: "Analysis of bike-sharing data to convert casual riders to annual members.",
-          image: [],
-        },
-        {
-          id: 8,
+          id: 9,
           title: "Heart Attack Disease Prediction",
           description: "Predictable model using Random Forest and ANN to evaluate heart disease risk.",
           image: [],
         },
+        
+        
       ],
     },
     {
@@ -68,21 +76,27 @@ export default function Projects() {
       name: "Backend Development",
       projects: [
         {
-          id: 9,
-          title: "Building News Intelligence Backend with FastAPI and PostgreSQL",
-          description: "Backend for AI-powered news platform with FastAPI and PostgreSQL.",
-          image: [],
-        },
-        {
           id: 10,
-          title: "Wedding NestJs Application",
-          description: "Backend for a wedding app with user authentication and vendor management.",
+          title: "Building News Intelligence Backend with FastAPI and PostgreSQL",
+          description: "The AI-powered news platform’s backend was built using FastAPI, a high-performance Python framework, to handle API requests, manage data pipelines, and integrate AI models. Its asynchronous capabilities efficiently processed tasks like article scraping, NLP processing, and content delivery, while RESTful endpoints ensured seamless communication between components. PostgreSQL was chosen for data storage, optimized for structured data like article metadata, RSS feeds, and NLP outputs. The pgvector extension enabled semantic search, and Redis caching improved performance. Docker ensured consistent deployment, and AWS provided scalable infrastructure. Together, FastAPI and PostgreSQL formed a robust, scalable foundation supporting real-time data ingestion, NLP, and user feedback, with room for future enhancements like multi-language support and advanced analytics. \n This project is connected 'AI-Driven News Intelligence Platform' under 'AI/Machine Learning' ",
           image: [],
         },
         {
-          id: 11,
+            id: 11,
+            title: "FASTAPI Backend for Sermon Management",
+            description: "Built a robust backend system using FastAPI to manage church sermons by scraping YouTube videos and processing them through a machine learning pipeline. The backend integrates with YouTube's API to automatically scrape and store sermon videos, while the FastAPI framework ensures efficient handling of video metadata, subtitles, and classification results. The system also supports multilingual translation of sermon subtitles, making content accessible to a global audience. Designed for scalability and performance, the backend leverages asynchronous programming and containerization with Docker for seamless deployment. This project highlights expertise in backend development, API integration, and workflow automation.\n This project is connected to 'NLP for Sermon Classification and Translation' under 'AI/Machine Learning' ",
+            image: [],
+          },
+        {
+          id: 12,
+          title: "Wedding NestJs Application",
+          description: "Developed a scalable backend for a wedding planning app using NestJS, TypeScript, and Prisma. Features include JWT-based authentication, vendor management with CRUD operations, and wedding planning with budget tracking, expense management, and personalized recommendations. The app also offers advanced search and filtering, a customizable notification system, and seamless integration with Supabase for database management. Built with modern tools like GitHub, Git, and ClickUp, this project showcases expertise in backend development, API design, and database management, delivering a secure and user-friendly solution for wedding planning.",
+          image: [],
+        },
+        {
+          id: 13,
           title: "Davedology Course Management System",
-          description: "Course management system with lessons, quizzes, and analytics.",
+          description: "The Course management backend system designed to elevate the teaching and learning experience. Our platform seamlessly integrates lessons with engaging video content and interactive quizzes, empowering educators and students alike. Teachers enjoy a user-friendly dashboard to effortlessly add lessons and quizzes, while also gaining access to insightful analytics for the quiz section. Elevate your educational journey with our innovative course management solution.",
           image: [],
         },
       ],
@@ -92,9 +106,9 @@ export default function Projects() {
       name: "Frontend Development",
       projects: [
         {
-          id: 12,
+          id: 14,
           title: "News Intelligence Platform",
-          description: "Frontend for the AI-driven news intelligence platform.",
+          description: "Frontend for the AI-driven news intelligence platform",
           image: [],
         },
       ],
@@ -104,31 +118,31 @@ export default function Projects() {
       name: "Mobile Development (Flutter)",
       projects: [
         {
-          id: 13,
+          id: 15,
           title: "Swiftr",
           description: "Swiftr is the training membership that gives you access to various training forms, such as martial arts, gym, CrossFit, dance, yoga, tennis. \n All classes can be booked directly in this app and there is also a wide range of drop-in workouts where you can exercise in the gym whenever you please.",
           image: [],
         },
         {
-          id: 14,
+          id: 16,
           title: "Rayan",
           description: "Rayan is designed to offer optimum care and elite service to its valuable members at Al-Seef Hospital, focusing on improving their well-being through more straightforward and world-class facilities.\n We assign a Personal Health Concierge to every registered member to provide a valuable personal service and an exceptional care to meet the members’ needs with a higher quality and shorter period of time.",
           image: [],
         },
         {
-          id: 15,
+          id: 17,
           title: "Organ Live",
           description: "Organlive is a listener-supported internet audio station with a focus on music of the classical organ. We maintain a growing library of music that currently contains over 29,000 tracks. Our library features classical organ music performed on pipe, electronic, and combination instruments recorded all over the world. \n With our mobile app, enjoy listening to Organlive on the go. The mobile app features extra information about the organist and organ played during the recording (when available), in addition to a history of recently played tracks",
           image: [],
         },
         {
-          id: 16,
+          id: 18,
           title: "Dream Riders",
           description: "Flutter-based mobile app for Android and iOS.",
           image: [],
         },
         {
-          id: 17,
+          id: 19,
           title: "SKODA Cars",
           description: " Authorized Dealer & Service Center. Official ŠKODA dealer. \n Enjoy the strongest Skoda showroom  With official price and the best after-sales service. \n assure, For Maintenance We use exclusive specialized equipment & best technicians.",
           image: [],
@@ -153,11 +167,17 @@ export default function Projects() {
         name: "HubSpot Automation & Workflows",
         projects: [
           {
-            id: 12,
+            id: 20,
             title: "Phone Formater",
             description: "Developed an automated workflow in HubSpot to streamline contact management by dynamically formatting phone numbers based on country codes. This solution integrates seamlessly with HubSpot's CRM, ensuring consistent and accurate phone number formatting across all contacts. By automating this process, the workflow eliminates manual errors, enhances data quality, and improves the efficiency of communication workflows. The system is designed to adapt to various international phone number formats, making it scalable for global use cases. This project demonstrates expertise in HubSpot automation, data standardization, and workflow optimization.",
             image: [],
           },
+          {
+            id: 21,
+            title: "Referral Workflow",
+            description: "Designed and implemented a seamless referral workflow connecting HubSpot CRM with First Promoter to automate and optimize referral tracking and management. This integration enables real-time synchronization of contact data, ensuring accurate tracking of referral activities and rewards. The workflow automates the identification of referral sources, tracks customer referrals, and updates HubSpot contact records with referral status and rewards. By streamlining the referral process, this solution enhances customer engagement, improves data accuracy, and drives business growth through incentivized referrals. This project showcases expertise in CRM integration, workflow automation, and referral marketing strategies.",
+            image: [],  
+        },
         ],
       },
   ];
