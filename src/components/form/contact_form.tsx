@@ -4,6 +4,7 @@
 // components/ContactForm.js
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 export default function ContactForm() {
   const form = useRef<HTMLFormElement>(null); // Specify the type as HTMLFormElement
@@ -23,12 +24,20 @@ export default function ContactForm() {
         .then(
           (result) => {
             console.log("Email sent successfully!", result.text);
-            alert("Thank you! Your message has been sent.");
+            toast.success("Your message has been sent successfully!", {
+                position: "top-right",
+                autoClose: 5000, // Close after 5 seconds
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+              });
             form.current?.reset(); // Reset the form after submission
           },
           (error) => {
             console.error("Failed to send email:", error.text);
-            alert("Oops! Something went wrong. Please try again.");
+            toast.error("Oops! Something went wrong. Please try again."); // Show error toast
           }
         );
     } else {
@@ -37,39 +46,35 @@ export default function ContactForm() {
   };
 
   return (
-    <form
-      ref={form}
-      onSubmit={sendEmail}
-      className="max-w-md mx-auto"
-    >
-      <p className="mb-2">Connect with me:</p>
-      <input
-        type="email"
-        name="email"
-        placeholder="Your email"
-        required
-        className="w-full px-4 py-2 mb-2 rounded-lg text-gray-800"
-      />
-      <input
-        type="text"
-        name="subject"
-        placeholder="Your subject"
-        required
-        className="w-full px-4 py-2 mb-2 rounded-lg text-gray-800"
-      />
-      <textarea
-        name="message"
-        placeholder="Your message"
-        required
-        className="w-full px-4 py-2 mb-2 rounded-lg text-gray-800"
-        rows={3}
-      ></textarea>
-      <button
-        type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
-      >
-        Send Email
-      </button>
-    </form>
+    <form ref={form} onSubmit={sendEmail} className="max-w-md mx-auto">
+  <p className="mb-2">Connect with me:</p>
+  <input
+    type="text"
+    name="from_name" // Matches {{from_name}} in the template
+    placeholder="Your name"
+    required
+    className="w-full px-4 py-2 mb-2 rounded-lg text-gray-800"
+  />
+  <input
+    type="email"
+    name="from_email" // Optional: If you want to capture the sender's email
+    placeholder="Your email"
+    required
+    className="w-full px-4 py-2 mb-2 rounded-lg text-gray-800"
+  />
+  <textarea
+    name="message" // Matches {{message}} in the template
+    placeholder="Your message"
+    required
+    className="w-full px-4 py-2 mb-2 rounded-lg text-gray-800"
+    rows={3}
+  ></textarea>
+  <button
+    type="submit"
+    className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
+  >
+    Send Email
+  </button>
+</form>
   );
 }
