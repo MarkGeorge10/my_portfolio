@@ -17,7 +17,7 @@ export default function Projects() {
       projects: [
 
         {
-            id: 3,
+            id: 80,
             title: "Sustainable Energy Marketplace and Societal Readiness",
             description: "This project develops a green energy investment model that examines the impact of societal acceptance on financial returns and investment decisions, particularly in the post-Fukushima era. By analyzing empirical data, it shows that public sentiment significantly influences investment flows, profitability, and job creation. The findings stress the importance of aligning investment strategies with societal values to promote sustainable energy transitions, offering valuable insights for policymakers and investors.",
             image: ['/images/AI/energy.webp','/images/AI/energy.webp'],
@@ -31,7 +31,7 @@ export default function Projects() {
           },
 
           {
-            id: 3,
+            id: 81,
             title: "Opioid Epidemic",
             description: "This project focuses on predicting and preventing opioid deaths by analyzing social, economic, and demographic data. Collaborating with faculty, graduate students from Penn State Great Valley and Scranton are using data-driven approaches, leveraging AI and machine learning to identify risk factors and geographic regions with high opioid death rates. The goal is to develop a model for targeted interventions, offering valuable insights to inform community stakeholders and advance research on the opioid crisis.",
             image: ['/images/AI/opioids.png','/images/AI/opioids.png'],
