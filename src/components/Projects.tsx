@@ -9,10 +9,40 @@ export default function Projects() {
 
   // Categories and their projects
   const categories = [
+
+ 
     {
       id: 1,
       name: "AI/Machine Learning",
       projects: [
+
+        {
+            id: 3,
+            title: "Sustainable Energy Marketplace and Societal Readiness",
+            description: "This project develops a green energy investment model that examines the impact of societal acceptance on financial returns and investment decisions, particularly in the post-Fukushima era. By analyzing empirical data, it shows that public sentiment significantly influences investment flows, profitability, and job creation. The findings stress the importance of aligning investment strategies with societal values to promote sustainable energy transitions, offering valuable insights for policymakers and investors.",
+            image: ['/images/AI/energy.webp','/images/AI/energy.webp'],
+            linksmodel:[
+              {
+                  icons:'https://img.shields.io/badge/-Read more-000000?logo=Read&logoColor=FFFFFF',
+                  links:'https://nonnasorokinaphd.org/my-lab'
+                }
+            ],
+               headerIcon: 'https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white'
+          },
+
+          {
+            id: 3,
+            title: "Opioid Epidemic",
+            description: "This project focuses on predicting and preventing opioid deaths by analyzing social, economic, and demographic data. Collaborating with faculty, graduate students from Penn State Great Valley and Scranton are using data-driven approaches, leveraging AI and machine learning to identify risk factors and geographic regions with high opioid death rates. The goal is to develop a model for targeted interventions, offering valuable insights to inform community stakeholders and advance research on the opioid crisis.",
+            image: ['/images/AI/opioids.png','/images/AI/opioids.png'],
+            linksmodel:[
+              {
+                  icons:'https://img.shields.io/badge/-Read more-000000?logo=Read&logoColor=FFFFFF',
+                  links:'https://www.psu.edu/news/great-valley/story/great-valley-grad-students-analyze-opioid-epidemic-data-faculty-project'
+                }
+            ],
+               headerIcon: 'https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white'
+          },
         {
           id: 1,
           title: "AI-Driven News Intelligence Platform",
@@ -74,6 +104,7 @@ export default function Projects() {
           ],
              headerIcon: 'https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white'
         },
+
         // {
         //   id: 4,
         //   title: "Medical Basket Analysis",
