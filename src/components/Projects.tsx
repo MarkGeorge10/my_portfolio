@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Slider from "react-slick";
+import Image from "next/image";
 
 export default function Projects() {
   // State to manage the active category
@@ -394,8 +395,8 @@ export default function Projects() {
   )?.projects || [];
 
   return (
-    <section id="projects" className="py-12">
-      <div className="container mx-auto">
+    <section id="projects" className="py-12 ">
+      <div className="container mx-auto ">
         <h2 className="text-3xl font-bold text-center mb-8">Projects</h2>
 
         {/* Category Navigation Bar */}
@@ -406,9 +407,9 @@ export default function Projects() {
               onClick={() => setActiveCategory(category.name)}
               className={`px-4 py-2 rounded-lg ${
                 activeCategory === category.name
-                  ? "bg-blue-500 text-white"
+                  ? "bg-gray-900 text-white"
                   : "bg-gray-200 text-gray-700"
-              } hover:bg-blue-500 hover:text-white transition-colors`}
+              } hover:bg-gray-900 hover:text-white transition-colors`}
             >
               {category.name}
             </button>
@@ -449,8 +450,10 @@ export default function Projects() {
                 <Slider {...settings}>
                   {project.image.map((img, index) => (
                     <div key={index} className="p-2">
-                      <img
+                      <Image
                         src={img}
+                        width={400}
+                        height={400}
                         alt={project.title}
                         className="w-full h-[400] object-contain rounded-lg"
                       />

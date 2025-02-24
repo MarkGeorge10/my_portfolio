@@ -8,3 +8,44 @@
 body {
   font-family: 'Inter', sans-serif;
 }
+
+.animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  .animate-circulate {
+    animation: circulate 4s linear infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes circulate {
+    0% {
+      transform: rotate(0deg) translate(112px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translate(112px) rotate(-360deg);
+    }
+  }
