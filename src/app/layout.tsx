@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mark Fahim Portofolio",
-  description: "",
+    title: 'Mark Fahim | Senior Software Engineer & AI Specialist',
+    description: 'Portfolio of Mark Fahim - Senior Software Engineer, AI Specialist, and Master\'s Student in AI',
   icons: ''
 };
 
