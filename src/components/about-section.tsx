@@ -32,7 +32,7 @@ export function AboutSection() {
                 <li>🔭 Working as an AI Research Assistant at Pennsylvania State University</li>
                 <li>🎓 Pursuing a Master&apos;s Degree in Artificial Intelligence</li>
                 <li>🌱 Enhancing my skills in Algorithms and Programming Automatic Calculus</li>
-                <li>💬 Specializing in Machine Learning, Android Development, and Flutter Development</li>
+                <li>💬 Specializing in Machine Learning, Backend development, and Mobile Development</li>
                 <li>📫 Available at mark.fahim50@gmail.com for collaborations and opportunities</li>
               </ul>
             </div>
