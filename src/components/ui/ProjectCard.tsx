@@ -1,4 +1,4 @@
-import Slider from "react-slick";
+import Slider, { Settings as SliderSettings } from "react-slick"; // Import SliderSettings
 import Image from "next/image";
 
 interface LinkModel {
@@ -18,7 +18,7 @@ interface Project {
 
 interface ProjectCardProps {
   project: Project;
-  settings: any; // Slider settings
+  settings: SliderSettings; // Use SliderSettings type from react-slick
   isMobileCategory: boolean; // To adjust layout for mobile category
 }
 
@@ -39,10 +39,12 @@ export default function ProjectCard({
       <div className="flex items-center space-x-3 mb-4">
         <h3 className="text-xl font-semibold">{project.title}</h3>
         {project.headerIcon && (
-          <img
+          <Image
             src={project.headerIcon}
             alt={`${project.title} badge`}
             className="h-6"
+            width={24} // Example width
+            height={24} // Example height
           />
         )}
       </div>
@@ -126,7 +128,13 @@ export default function ProjectCard({
                 rel="noopener noreferrer"
                 className="flex items-center"
               >
-                <img src={linkItem.icons} alt="Link badge" className="h-6" />
+                <Image
+                  src={linkItem.icons}
+                  alt="Link badge"
+                  className="h-6"
+                  width={24} // Example width
+                  height={24} // Example height
+                />
               </a>
             ) : null
           )}

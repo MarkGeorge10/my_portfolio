@@ -25,15 +25,15 @@ export default function HeaderV2() {
       useEffect(() => {
         const timer = setTimeout(() => {
           setIsVisible(true); // Trigger visibility for fade-in and count animations
-    
+      
           // Array to store interval IDs for cleanup
           const intervals: NodeJS.Timeout[] = [];
-    
+      
           // Animate numbers over 2 seconds
           const duration = 3000;
           const stepTime = 20;
           const steps = duration / stepTime;
-    
+      
           const animateCount = (key: keyof typeof stats, target: number) => {
             let current = 0;
             const increment = Math.ceil(target / steps);
@@ -47,22 +47,22 @@ export default function HeaderV2() {
             }, stepTime);
             intervals.push(interval); // Store interval ID for cleanup
           };
-    
+      
           animateCount("years", targetStats.years);
           animateCount("projects", targetStats.projects);
           animateCount("technologies", targetStats.technologies);
           animateCount("commits", targetStats.commits);
-    
+      
           // Cleanup all intervals when the component unmounts
           return () => {
             clearTimeout(timer);
             intervals.forEach((intervalId) => clearInterval(intervalId));
           };
         }, 500); // Delay for 0.5 seconds to sync with page load
-    
+      
         // Initial cleanup in case the effect runs again
         return () => clearTimeout(timer);
-      }, []);
+      }, [targetStats.commits, targetStats.projects, targetStats.technologies, targetStats.years]);
     
       return (
         <header className="bg-gray-900 text-white py-16 relative overflow-hidden">

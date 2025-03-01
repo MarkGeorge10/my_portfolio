@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import Image from "next/image"; // Import at the top
 
 export function HeroSection() {
   return (
@@ -17,12 +18,12 @@ export function HeroSection() {
             transition={{ duration: 0.5 }}
           >
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                Hi, I'm Mark Fahim
-              </h1>
-              <p className="text-xl text-muted-foreground">
-                Senior Software Engineer | AI Specialist | Master's Student in AI
-              </p>
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+            Hi, I&apos;m Mark Fahim
+            </h1>
+            <p className="text-xl text-muted-foreground">
+            Senior Software Engineer | AI Specialist | Master&apos;s Student in AI
+            </p>
             </div>
             <p className="max-w-[600px] text-muted-foreground md:text-m">
               Building intelligent systems with a passion for machine learning, algorithms, and mobile development. 
@@ -74,7 +75,7 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="w-64 h-64 rounded-full overflow-hidden bg-gray-800">
-              <img
+              <Image
                 src="/images/profile.jpg"
                 alt="Mark Fahim"
                 className="object-contain"

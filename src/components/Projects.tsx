@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Slider from "react-slick";
 import ProjectCard from "../components/ui/ProjectCard"; // Adjust the path as needed
 import projectsData from "../data/projectsData.json"; // Adjust the path as needed
 

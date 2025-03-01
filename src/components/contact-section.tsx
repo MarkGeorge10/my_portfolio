@@ -2,14 +2,14 @@
 
 import { useState, useRef } from "react";
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import { Input } from "./ui/archive/input";
 import { Textarea } from "./ui/textarea";
-import { useToast } from "../hooks/use-toast";
-import { Github, Linkedin, Mail, MapPin, Twitter } from "lucide-react";
+// import { useToast } from "../hooks/use-toast";
+import { Github, Linkedin, Mail, MapPin } from "lucide-react";
 import emailjs from "@emailjs/browser"; // Make sure to install this package
 
 export function ContactSection() {
-  const { toast } = useToast();
+//   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,46 +39,46 @@ export function ContactSection() {
         .then(
           (result) => {
             console.log("Email sent successfully!", result.text);
-            toast({
-              title: "Message sent!",
-              description: "Thank you for reaching out. I'll get back to you soon.",
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-            });
+            // toast({
+            //   title: "Message sent!",
+            //   description: "Thank you for reaching out. I'll get back to you soon.",
+            //   position: "top-right",
+            //   autoClose: 5000,
+            //   hideProgressBar: false,
+            //   closeOnClick: true,
+            //   pauseOnHover: true,
+            //   draggable: true,
+            // });
             form.current?.reset(); // Reset the form after submission
             setIsSubmitting(false);
           },
           (error) => {
             console.error("Failed to send email:", error.text);
-            toast({
-              title: "Oops! Something went wrong.",
-              description: "Please try again.",
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-            });
+            // toast({
+            //   title: "Oops! Something went wrong.",
+            //   description: "Please try again.",
+            //   position: "top-right",
+            //   autoClose: 5000,
+            //   hideProgressBar: false,
+            //   closeOnClick: true,
+            //   pauseOnHover: true,
+            //   draggable: true,
+            // });
             setIsSubmitting(false);
           }
         );
     } else {
       console.error("Form reference is null.");
-      toast({
-        title: "Error",
-        description: "Form submission failed. Please try again.",
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-      });
+    //   toast({
+    //     title: "Error",
+    //     description: "Form submission failed. Please try again.",
+    //     position: "top-right",
+    //     autoClose: 5000,
+    //     hideProgressBar: false,
+    //     closeOnClick: true,
+    //     pauseOnHover: true,
+    //     draggable: true,
+    //   });
       setIsSubmitting(false);
     }
   };
@@ -88,7 +88,7 @@ export function ContactSection() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">Let's Connect</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">Let&apos;s Connect</h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl text-white">
               Have a project in mind or want to collaborate? Get in touch!
             </p>
