@@ -43,8 +43,8 @@ export default function ProjectCard({
             src={project.headerIcon}
             alt={`${project.title} badge`}
             className="h-6"
-            width={24} // Example width
-            height={24} // Example height
+            width={80} // Example width
+            height={50} // Example height
           />
         )}
       </div>
@@ -132,8 +132,8 @@ export default function ProjectCard({
                   src={linkItem.icons}
                   alt="Link badge"
                   className="h-6"
-                  width={24} // Example width
-                  height={24} // Example height
+                  width={80} // Example width
+                  height={50} // Example height
                 />
               </a>
             ) : null
