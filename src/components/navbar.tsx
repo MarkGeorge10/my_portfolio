@@ -14,29 +14,29 @@ export function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav className="bg-gray-900 sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold">Mark Fahim</span>
+          <span className="text-xl font-bold text-white px-6">Mark Fahim</span>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex md:items-center md:space-x-6">
-          <Link href="#about" className="text-sm font-medium transition-colors hover:text-primary">
+          <Link href="#about" className="text-sm font-medium transition-colors hover:text-primary text-white">
             About
           </Link>
-          <Link href="#projects" className="text-sm font-medium transition-colors hover:text-primary">
+          <Link href="#projects" className="text-sm font-medium transition-colors hover:text-primary text-white">
             Projects
           </Link>
-          <Link href="#skills" className="text-sm font-medium transition-colors hover:text-primary">
+          {/* <Link href="#skills" className="text-sm font-medium transition-colors hover:text-primary ">
             Skills
-          </Link>
-          <Link href="#contact" className="text-sm font-medium transition-colors hover:text-primary">
+          </Link> */}
+          <Link href="#contact" className="text-sm font-medium transition-colors hover:text-primary text-white">
             Contact
           </Link>
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <Button asChild>
-            <Link href="#contact">Let&apos;s Connect</Link>
+            <Link href="#contact" className="text-white">Let&apos;s Connect</Link>
           </Button>
         </div>
 

@@ -3,16 +3,16 @@
 
 import Projects from "@/components/Projects";
 import WhyMe from "@/components/why_me";
-import Headers from "@/components/Header";
 import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
 import { ContactSection } from "@/components/contact-section";
 import { FooterV2 } from "@/components/footerv2";
+import { Navbar } from "@/components/navbar";
 
 export default function Home() {
   return (
     <div>
-      <Headers />
+      <Navbar />
       <main>
         {/* <section className="py-20 text-center bg-gradient-to-r from-blue-500 to-purple-500 text-white">
           <h1 className="text-4xl md:text-5xl font-bold">Hi, I'm Mark Fahim</h1>
