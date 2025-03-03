@@ -1,5 +1,6 @@
 import Slider, { Settings as SliderSettings } from "react-slick"; // Import SliderSettings
 import Image from "next/image";
+import { track } from "@vercel/analytics"; // Import track for click tracking
 
 interface LinkModel {
   icons: string;
@@ -20,21 +21,33 @@ interface ProjectCardProps {
   project: Project;
   settings: SliderSettings; // Use SliderSettings type from react-slick
   isMobileCategory: boolean; // To adjust layout for mobile category
+  "data-project-id"?: string; // Add optional data attribute for tracking
 }
 
 export default function ProjectCard({
   project,
   settings,
   isMobileCategory,
+  "data-project-id": projectId, // Destructure the data attribute
 }: ProjectCardProps) {
   const isYouTubeVideo =
     project.video?.includes("youtube.com") || project.video?.includes("youtu.be");
+
+  const handleLinkClick = (link: string) => {
+    track("projectLinkClick", {
+      projectId: projectId || project.id.toString(),
+      projectTitle: project.title,
+      linkUrl: link,
+      timestamp: new Date().toISOString(),
+    });
+  };
 
   return (
     <div
       className={`bg-white p-6 rounded-lg shadow-md ${
         isMobileCategory ? "w-auto h-auto" : "h-auto"
       }`}
+      data-project-id={projectId || project.id.toString()} // Use the passed data-project-id or project.id
     >
       <div className="flex items-center space-x-3 mb-4">
         <h3 className="text-xl font-semibold">{project.title}</h3>
@@ -116,7 +129,7 @@ export default function ProjectCard({
         {project.description}
       </p>
 
-      {/* Links Row */}
+      {/* Links Row with Click Tracking */}
       {project.linksmodel.length > 0 && (
         <div className="flex space-x-2 mt-4">
           {project.linksmodel.map((linkItem, index) =>
@@ -127,6 +140,11 @@ export default function ProjectCard({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center"
+                onClick={(e) => {
+                  e.preventDefault(); // Prevent default navigation briefly
+                  handleLinkClick(linkItem.links); // Track the click
+                  window.open(linkItem.links, "_blank"); // Open in new tab after tracking
+                }}
               >
                 <Image
                   src={linkItem.icons}

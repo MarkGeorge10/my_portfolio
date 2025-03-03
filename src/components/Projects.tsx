@@ -38,7 +38,7 @@ export default function Projects() {
         if (entry.isIntersecting) {
           const projectId = entry.target.getAttribute("data-project-id");
           if (projectId) {
-            // Use the track function from Vercel Analytics
+            // Track the project view event
             track("projectView", {
               projectId: projectId,
               projectTitle: entry.target.querySelector("h3")?.textContent || "Unknown",
