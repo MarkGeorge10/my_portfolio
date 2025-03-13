@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "./theme-toggle";
+// import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
 
 export function Navbar() {
