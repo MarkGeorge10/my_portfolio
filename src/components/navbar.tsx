@@ -42,9 +42,9 @@ export function Navbar() {
 
         {/* Mobile Navigation Toggle */}
         <div className="flex items-center md:hidden">
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <Button variant="ghost" size="icon" onClick={toggleMenu} className="ml-2">
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
           </Button>
         </div>
       </div>
@@ -55,34 +55,34 @@ export function Navbar() {
           <div className="flex flex-col space-y-4">
             <Link 
               href="#about" 
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className="text-sm font-medium transition-colors hover:text-primary text-white"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link 
               href="#projects" 
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className="text-sm font-medium transition-colors hover:text-primary text-white"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
             </Link>
             <Link 
               href="#skills" 
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className="text-sm font-medium transition-colors hover:text-primary text-white"
               onClick={() => setIsMenuOpen(false)}
             >
               Skills
             </Link>
             <Link 
               href="#contact" 
-              className="text-sm font-medium transition-colors hover:text-primary"
+              className="text-sm font-medium transition-colors hover:text-primary text-white"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>
             <Button asChild>
-              <Link href="#contact" onClick={() => setIsMenuOpen(false)}>Let&apos;s Connect</Link>
+              <Link href="#contact" onClick={() => setIsMenuOpen(false)} className="text-white">Let&apos;s Connect</Link>
             </Button>
           </div>
         </div>
