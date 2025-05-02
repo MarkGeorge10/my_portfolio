@@ -7,12 +7,12 @@
           "id": 80,
           "title": "Sustainable Energy Marketplace and Societal Readiness",
           "description": "This project develops a green energy investment model that examines the impact of societal acceptance on financial returns and investment decisions, particularly in the post-Fukushima era. By analyzing empirical data, it shows that public sentiment significantly influences investment flows, profitability, and job creation. The findings stress the importance of aligning investment strategies with societal values to promote sustainable energy transitions, offering valuable insights for policymakers and investors.",
-          "image": [ "/images/AI/energy.webp"],
+          "image": [ "/images/AI/green energy poster.jpg", "/images/AI/energy.webp"],
           "video": "",
           "linksmodel": [
             {
               "icons": "https://img.shields.io/badge/-Read more-000000?logo=Read&logoColor=FFFFFF",
-              "links": "https://nonnasorokinaphd.org/my-lab"
+              "links": "https://frontier.psu.edu/2025/03/10/sustainable-energy-marketplace-and-societal-readiness/"
             }
           ],
           "headerIcon": "https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white"
@@ -31,6 +31,21 @@
           ],
           "headerIcon": "https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white"
         },
+
+        {
+            "id": 80,
+            "title": "Vocal Bridge: Real-Time Multilingual Video Dubbing",
+            "description": "Developed Vocal Bridge, an NLP-powered system that dubs English videos into Turkish, German, Italian, Spanish, or Hungarian with synchronized audio and subtitles. Trained Seq2Seq LSTM models (91.1% accuracy for Turkish) and transformer-based MarianMT models (BLEU scores up to 56.66% for Italian) on datasets of up to 364,199 sentence pairs using Penn State’s ROAR HPC. Integrated transcription, translation, and text-to-speech for applications in media localization, education, and global communication.",
+            "image": [ "/images/medium.webp"],
+            "video": "",
+            "linksmodel": [
+              {
+                "icons": "https://img.shields.io/badge/-Medium-000000?logo=medium&logoColor=FFFFFF",
+                "links": "https://medium.com/@mark.fouad99/breaking-language-barriers-with-vocal-bridge-real-time-video-dubbing-powered-by-nlp-3a6c32af5062"
+              }
+            ],
+            "headerIcon": "https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white"
+          },
         
         {
           "id": 24,
