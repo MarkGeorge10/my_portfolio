@@ -4,7 +4,7 @@
       "name": "AI/Machine Learning",
       "projects": [
         {
-          "id": 80,
+          "id": 10001,
           "title": "Sustainable Energy Marketplace and Societal Readiness",
           "description": "This project develops a green energy investment model that examines the impact of societal acceptance on financial returns and investment decisions, particularly in the post-Fukushima era. By analyzing empirical data, it shows that public sentiment significantly influences investment flows, profitability, and job creation. The findings stress the importance of aligning investment strategies with societal values to promote sustainable energy transitions, offering valuable insights for policymakers and investors.",
           "image": [ "/images/AI/green energy poster.jpg", "/images/AI/energy.webp"],
@@ -18,7 +18,7 @@
           "headerIcon": "https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white"
         },
         {
-          "id": 81,
+          "id": 10002,
           "title": "Opioid Epidemic",
           "description": "This project focuses on predicting and preventing opioid deaths by analyzing social, economic, and demographic data. Collaborating with faculty, graduate students from Penn State Great Valley and Scranton are using data-driven approaches, leveraging AI and machine learning to identify risk factors and geographic regions with high opioid death rates. The goal is to develop a model for targeted interventions, offering valuable insights to inform community stakeholders and advance research on the opioid crisis.",
           "image": ["/images/AI/opioids.png"],
@@ -31,24 +31,22 @@
           ],
           "headerIcon": "https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white"
         },
-
         {
-            "id": 80,
-            "title": "Vocal Bridge: Real-Time Multilingual Video Dubbing",
-            "description": "Developed Vocal Bridge, an NLP-powered system that dubs English videos into Turkish, German, Italian, Spanish, or Hungarian with synchronized audio and subtitles. Trained Seq2Seq LSTM models (91.1% accuracy for Turkish) and transformer-based MarianMT models (BLEU scores up to 56.66% for Italian) on datasets of up to 364,199 sentence pairs using Penn State’s ROAR HPC. Integrated transcription, translation, and text-to-speech for applications in media localization, education, and global communication.",
-            "image": [ "/images/medium.webp"],
-            "video": "",
-            "linksmodel": [
-              {
-                "icons": "https://img.shields.io/badge/-Medium-000000?logo=medium&logoColor=FFFFFF",
-                "links": "https://medium.com/@mark.fouad99/breaking-language-barriers-with-vocal-bridge-real-time-video-dubbing-powered-by-nlp-3a6c32af5062"
-              }
-            ],
-            "headerIcon": "https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white"
-          },
-        
+          "id": 10003,
+          "title": "Vocal Bridge: Real-Time Multilingual Video Dubbing",
+          "description": "Developed Vocal Bridge, an NLP-powered system that dubs English videos into Turkish, German, Italian, Spanish, or Hungarian with synchronized audio and subtitles. Trained Seq2Seq LSTM models (91.1% accuracy for Turkish) and transformer-based MarianMT models (BLEU scores up to 56.66% for Italian) on datasets of up to 364,199 sentence pairs using Penn State’s ROAR HPC. Integrated transcription, translation, and text-to-speech for applications in media localization, education, and global communication.",
+          "image": [ "/images/medium.webp"],
+          "video": "",
+          "linksmodel": [
+            {
+              "icons": "https://img.shields.io/badge/-Medium-000000?logo=medium&logoColor=FFFFFF",
+              "links": "https://medium.com/@mark.fouad99/breaking-language-barriers-with-vocal-bridge-real-time-video-dubbing-powered-by-nlp-3a6c32af5062"
+            }
+          ],
+          "headerIcon": "https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white"
+        },
         {
-          "id": 24,
+          "id": 10004,
           "title": "AI-Powered Music Transcription Using Deep Learning",
           "description": "In this project, I created an AI-powered music transcription system using deep learning to convert audio performances into written musical notation. Focusing on polyphonic music, I addressed challenges like overlapping notes and harmonies by preprocessing the NSynth dataset and extracting features such as MFCCs and spectrograms. I designed a hybrid model combining CNNs for spatial feature extraction and RNNs with LSTM/GRU layers for temporal dependencies. Trained on an HPC system with over 500,000 samples, the model achieved 73.44% accuracy. I also implemented note and chord comparison techniques to provide feedback for musicians. This project showcases my expertise in deep learning, audio processing, and solving complex problems, with applications in music education, composition, and therapy.",
           "image": [ "/images/medium.webp"],
@@ -62,21 +60,21 @@
           "headerIcon": "https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white"
         },
         {
-            "id": 3,
-            "title": "Intelligent Mancala Game",
-            "description": "In this project, I explored the game of Mancala and developed an AI to create winning strategies by maximizing stones in the player's home bin. I implemented adversarial search algorithms like DFS, BFS, A*, and Minimax with Alpha-Beta pruning to systematically explore the game's state space and make optimal decisions. Additionally, I integrated Reinforcement Learning (Q-Learning) to enable the AI to adapt and improve its strategies over time by training it against a strong Minimax opponent. This combination of adversarial search and reinforcement learning enhanced the AI's decision-making, providing a robust solution for optimal gameplay. Through this project, I gained hands-on experience in AI algorithms, game theory, and machine learning, showcasing my ability to apply theoretical knowledge to real-world problems.",
-            "image": [ "/images/medium.webp"],
-            "video": "",
-            "linksmodel": [
-              {
-                "icons": "https://img.shields.io/badge/-Medium-000000?logo=medium&logoColor=FFFFFF",
-                "links": "https://medium.com/@mark.fouad99/mancala-game-and-artificial-intelligence-7a922a4a66bc"
-              }
-            ],
-            "headerIcon": "https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white"
-          },
+          "id": 10005,
+          "title": "Intelligent Mancala Game",
+          "description": "In this project, I explored the game of Mancala and developed an AI to create winning strategies by maximizing stones in the player's home bin. I implemented adversarial search algorithms like DFS, BFS, A*, and Minimax with Alpha-Beta pruning to systematically explore the game's state space and make optimal decisions. Additionally, I integrated Reinforcement Learning (Q-Learning) to enable the AI to adapt and improve its strategies over time by training it against a strong Minimax opponent. This combination of adversarial search and reinforcement learning enhanced the AI's decision-making, providing a robust solution for optimal gameplay. Through this project, I gained hands-on experience in AI algorithms, game theory, and machine learning, showcasing my ability to apply theoretical knowledge to real-world problems.",
+          "image": [ "/images/medium.webp"],
+          "video": "",
+          "linksmodel": [
+            {
+              "icons": "https://img.shields.io/badge/-Medium-000000?logo=medium&logoColor=FFFFFF",
+              "links": "https://medium.com/@mark.fouad99/mancala-game-and-artificial-intelligence-7a922a4a66bc"
+            }
+          ],
+          "headerIcon": "https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white"
+        },
         {
-          "id": 2,
+          "id": 10006,
           "title": "NLP for Sermon Classification and Translation",
           "description": "Developed an advanced NLP pipeline to classify and translate church sermon videos. Leveraged OpenAI's Whisper model for speech-to-text transcription, enabling accurate extraction of sermon subtitles from YouTube videos. Built a custom NLP classification model to categorize sermons into one or more predefined categories (e.g., love, Bible study, etc.) from a list of 100+ topics. Additionally, implemented a translation module to convert sermon subtitles from English to multiple languages, including Arabic, Amharic, and Spanish. This project demonstrates expertise in NLP, machine learning, and multilingual text processing, providing a scalable solution for sermon organization and accessibility.",
           "image": [],
@@ -100,7 +98,7 @@
       "name": "Backend Development",
       "projects": [
         {
-          "id": 10,
+          "id": 20001,
           "title": "Building News Intelligence Backend with FastAPI and PostgreSQL",
           "description": "The AI-powered news platform’s backend was built using FastAPI, a high-performance Python framework, to handle API requests, manage data pipelines, and integrate AI models. Its asynchronous capabilities efficiently processed tasks like article scraping, NLP processing, and content delivery, while RESTful endpoints ensured seamless communication between components. PostgreSQL was chosen for data storage, optimized for structured data like article metadata, RSS feeds, and NLP outputs. The pgvector extension enabled semantic search, and Redis caching improved performance. Docker ensured consistent deployment, and AWS provided scalable infrastructure. Together, FastAPI and PostgreSQL formed a robust, scalable foundation supporting real-time data ingestion, NLP, and user feedback, with room for future enhancements like multi-language support and advanced analytics. \n This project is connected 'AI-Driven News Intelligence Platform' under 'AI/Machine Learning' ",
           "image": [],
@@ -118,7 +116,7 @@
           "headerIcon": "https://img.shields.io/badge/-FastAPI-009688?logo=fastapi&logoColor=white"
         },
         {
-          "id": 11,
+          "id": 20002,
           "title": "FASTAPI Backend for Sermon Management",
           "description": "Built a robust backend system using FastAPI to manage church sermons by scraping YouTube videos and processing them through a machine learning pipeline. The backend integrates with YouTube's API to automatically scrape and store sermon videos, while the FastAPI framework ensures efficient handling of video metadata, subtitles, and classification results. The system also supports multilingual translation of sermon subtitles, making content accessible to a global audience. Designed for scalability and performance, the backend leverages asynchronous programming and containerization with Docker for seamless deployment. This project highlights expertise in backend development, API integration, and workflow automation.\n This project is connected to 'NLP for Sermon Classification and Translation' under 'AI/Machine Learning' ",
           "image": [],
@@ -136,7 +134,7 @@
           "headerIcon": "https://img.shields.io/badge/-FastAPI-009688?logo=fastapi&logoColor=white"
         },
         {
-          "id": 12,
+          "id": 20003,
           "title": "Wedding NestJs Application",
           "description": "Developed a scalable backend for a wedding planning app using NestJS, TypeScript, and Prisma. Features include JWT-based authentication, vendor management with CRUD operations, and wedding planning with budget tracking, expense management, and personalized recommendations. The app also offers advanced search and filtering, a customizable notification system, and seamless integration with Supabase for database management. Built with modern tools like GitHub, Git, and ClickUp, this project showcases expertise in backend development, API design, and database management, delivering a secure and user-friendly solution for wedding planning.",
           "image": [],
@@ -154,7 +152,7 @@
           "headerIcon": "https://img.shields.io/badge/-NestJS-E0234E?logo=nestjs&logoColor=white"
         },
         {
-          "id": 13,
+          "id": 20004,
           "title": "Davedology Course Management System",
           "description": "The Course management backend system designed to elevate the teaching and learning experience. Our platform seamlessly integrates lessons with engaging video content and interactive quizzes, empowering educators and students alike. Teachers enjoy a user-friendly dashboard to effortlessly add lessons and quizzes, while also gaining access to insightful analytics for the quiz section. Elevate your educational journey with our innovative course management solution.",
           "image": [],
@@ -178,31 +176,51 @@
       "name": "Frontend Development",
       "projects": [
         {
-            "id": 1,
-            "title": "AI-Driven News Intelligence Platform",
-            "description": "This project delivers an automated news aggregation and curation system, combining web scraping, natural language processing (NLP), and user feedback mechanisms to streamline information consumption. The platform integrates two primary datapipelines: (1) a third-party integration with Inoreader API, where a Python-based scraper collects and processes news articles before marking them as read, and (2) a user-configurable RSS feed management system. Users can dynamically add or remove RSS feeds via a Next.js dashboard, with all feed metadata stored in PostgreSQL. The scraper service automatically discovers and processes new content from these feeds, ensuring continuous data ingestion.",
-            "image": [],
-            "video": "/images/AI/NLP_project.mp4",
-            "linksmodel": [
-              {
-                "icons": "",
-                "links": ""
-              },
-              {
-                "icons": "",
-                "links": ""
-              }
-            ],
-            "headerIcon": "https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white"
-          }
+          "id": 30001,
+          "title": "AI-Driven News Intelligence Platform",
+          "description": "This project delivers an automated news aggregation and curation system, combining web scraping, natural language processing (NLP), and user feedback mechanisms to streamline information consumption. The platform integrates two primary datapipelines: (1) a third-party integration with Inoreader API, where a Python-based scraper collects and processes news articles before marking them as read, and (2) a user-configurable RSS feed management system. Users can dynamically add or remove RSS feeds via a Next.js dashboard, with all feed metadata stored in PostgreSQL. The scraper service automatically discovers and processes new content from these feeds, ensuring continuous data ingestion.",
+          "image": [],
+          "video": "/images/AI/NLP_project.mp4",
+          "linksmodel": [
+            {
+              "icons": "",
+              "links": ""
+            },
+            {
+              "icons": "",
+              "links": ""
+            }
+          ],
+          "headerIcon": "https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white"
+        }
       ]
     },
     {
       "id": 4,
       "name": "Mobile Development",
       "projects": [
+       
         {
-          "id": 15,
+            "id": 40001,
+            "title": "AlborgLab",
+            "description": "The AlBorg Lab Mobile Application is a comprehensive engagement and communication platform designed to enhance the patient experience at AlBorg Laboratories. It enables users to effortlessly: \nSchedule home visits for diagnostic tests\nLocate AlBorg branches, access contact information, and obtain directions\nView and share test results with healthcare providers\nStay informed about AlBorg’s latest offers and test packages",
+            "image": [
+              "/images/mobile/alborg/alborglabs.webp",
+              "/images/mobile/alborg/homepage.webp",
+              "/images/mobile/alborg/homevisit.webp",
+              "/images/mobile/swiftr/promotion.webp"
+            ],
+            "video": "",
+            "linksmodel": [
+              {
+                "icons": "https://img.shields.io/badge/-Android-3DDC84?logo=android&logoColor=white",
+                "links": "https://play.google.com/store/apps/details?id=alborglab.app.lab"
+              }
+            ],
+            "headerIcon": "https://img.shields.io/badge/-Native App-02569B?logo=&logoColor=white"
+          },
+        {
+          "id": 40002,
           "title": "Swiftr",
           "description": "Swiftr is the training membership that gives you access to various training forms, such as martial arts, gym, CrossFit, dance, yoga, tennis. \n All classes can be booked directly in this app and there is also a wide range of drop-in workouts where you can exercise in the gym whenever you please.",
           "image": [
@@ -221,7 +239,7 @@
           "headerIcon": "https://img.shields.io/badge/-Flutter-02569B?logo=flutter&logoColor=white"
         },
         {
-          "id": 16,
+          "id": 40003,
           "title": "Rayan",
           "description": "Rayan is designed to offer optimum care and elite service to its valuable members at Al-Seef Hospital, focusing on improving their well-being through more straightforward and world-class facilities.\n We assign a Personal Health Concierge to every registered member to provide a valuable personal service and an exceptional care to meet the members’ needs with a higher quality and shorter period of time.",
           "image": [
@@ -245,7 +263,7 @@
           "headerIcon": "https://img.shields.io/badge/-Flutter-02569B?logo=flutter&logoColor=white"
         },
         {
-          "id": 17,
+          "id": 40004,
           "title": "Organ Live",
           "description": "Organlive is a listener-supported internet audio station with a focus on music of the classical organ. We maintain a growing library of music that currently contains over 29,000 tracks. Our library features classical organ music performed on pipe, electronic, and combination instruments recorded all over the world. \n With our mobile app, enjoy listening to Organlive on the go. The mobile app features extra information about the organist and organ played during the recording (when available), in addition to a history of recently played tracks",
           "image": ["/images/mobile/organ/organ 1.png", "/images/mobile/organ/organ 2.png"],
@@ -259,7 +277,7 @@
           "headerIcon": "https://img.shields.io/badge/-Flutter-02569B?logo=flutter&logoColor=white"
         },
         {
-          "id": 19,
+          "id": 40005,
           "title": "SKODA Cars",
           "description": "Authorized Dealer & Service Center. Official ŠKODA dealer. \n Enjoy the strongest Skoda showroom  With official price and the best after-sales service. \n assure, For Maintenance We use exclusive specialized equipment & best technicians.",
           "image": [
@@ -280,7 +298,31 @@
             }
           ],
           "headerIcon": "https://img.shields.io/badge/-Flutter-02569B?logo=flutter&logoColor=white"
-        }
+        },
+        {
+            "id": 40006,
+            "title": "AlMokhtabar",
+            "description": "The AlMokhtabar Mobile Application is a state-of-the-art platform crafted to elevate the patient experience at AlMokhtabar Laboratories by fostering seamless engagement and communication. With an intuitive interface, the app empowers users to:\nConveniently schedule home visits for diagnostic testing at their preferred time\nExplore AlMokhtabar branch locations, access detailed contact information, and navigate with integrated directions\nSecurely access and share laboratory test results with healthcare providers for streamlined care\nStay informed about exclusive AlMokhtabar promotions, special offers, and comprehensive test packages",
+            "image": [
+              "/images/mobile/almokhtabar/logo.webp",
+              "/images/mobile/almokhtabar/login.webp",
+              "/images/mobile/almokhtabar/homevisit.webp",
+              "/images/mobile/almokhtabar/payment.webp"
+            ],
+            "video": "",
+            "linksmodel": [
+              {
+                "icons": "https://img.shields.io/badge/-Android-3DDC84?logo=android&logoColor=white",
+                "links": "https://play.google.com/store/apps/details?id=yackeen.idh.almokhtabar.almokhtabar"
+              }
+            ,
+            {
+                "icons": "https://img.shields.io/badge/-Swift-F05138?logo=swift&logoColor=white",
+                "links": "https://apps.apple.com/eg/app/almokhtabar-%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%A8%D8%B1/id1079320486"
+              }
+            ],
+            "headerIcon": "https://img.shields.io/badge/-Native App-02569B?logo=&logoColor=white"
+          }
       ]
     },
     {
@@ -288,7 +330,7 @@
       "name": "HubSpot Automation & Workflows",
       "projects": [
         {
-          "id": 20,
+          "id": 50001,
           "title": "Phone Formater",
           "description": "Developed an automated workflow in HubSpot to streamline contact management by dynamically formatting phone numbers based on country codes. This solution integrates seamlessly with HubSpot's CRM, ensuring consistent and accurate phone number formatting across all contacts. By automating this process, the workflow eliminates manual errors, enhances data quality, and improves the efficiency of communication workflows. The system is designed to adapt to various international phone number formats, making it scalable for global use cases. This project demonstrates expertise in HubSpot automation, data standardization, and workflow optimization.",
           "image": [],
@@ -306,7 +348,7 @@
           "headerIcon": "https://img.shields.io/badge/-NestJS-E0234E?logo=nestjs&logoColor=white"
         },
         {
-          "id": 21,
+          "id": 50002,
           "title": "Referral Workflow",
           "description": "Designed and implemented a seamless referral workflow connecting HubSpot CRM with First Promoter to automate and optimize referral tracking and management. This integration enables real-time synchronization of contact data, ensuring accurate tracking of referral activities and rewards. The workflow automates the identification of referral sources, tracks customer referrals, and updates HubSpot contact records with referral status and rewards. By streamlining the referral process, this solution enhances customer engagement, improves data accuracy, and drives business growth through incentivized referrals. This project showcases expertise in CRM integration, workflow automation, and referral marketing strategies.",
           "image": [],
@@ -325,4 +367,4 @@
         }
       ]
     }
-  ]
+]
