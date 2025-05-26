@@ -322,6 +322,20 @@
               }
             ],
             "headerIcon": "https://img.shields.io/badge/-Native App-02569B?logo=&logoColor=white"
+          },
+          {
+            "id": 40007,
+            "title": "Parksie",
+            "description": "Enhance parking spot listing\n\nTired of crowded parking lots and garages? Quickly find and navigate to your local community and neighborhood parking spots. Using Parksie, find parking spots in real-time, or reserve a parking spot in someone’s driveway, yard, or garage. Start saving money by parking in private parking spots with the Parksie app. Looking to rent out your private parking space? Easily setup your driveway, yard, or garage as a parking spot for Parksie users to find and park. Using Parksie, you can start making money by selling your free parking space when you’re away, when it’s not being used, or when you don’t need it. Parksie connects parking space owners with drivers seeking parking spots for their cars, trucks, RVs, motorcycles, electric vehicles, boats, airplanes, helicopters, or 18-wheelesr. If you can drive it, you can park it if someone has the space.",
+            "image": ["/images/mobile/parksie/parksie logo.png", "/images/mobile/parksie/image 1.png", "/images/mobile/parksie/image 2.png", "/images/mobile/parksie/image 3.png", "/images/mobile/parksie/image 4.png"],
+            "video": "",
+            "linksmodel": [
+              {
+                "icons": "https://img.shields.io/badge/-Swift-F05138?logo=swift&logoColor=white",
+                  "links": "https://apps.apple.com/eg/app/almokhtabar-%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%A8%D8%B1/id1079320486"
+                }
+              ],
+              "headerIcon": "https://img.shields.io/badge/-Native App-02569B?logo=&logoColor=white"
           }
       ]
     },
