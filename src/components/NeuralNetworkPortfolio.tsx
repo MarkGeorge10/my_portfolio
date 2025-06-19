@@ -216,7 +216,7 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({ categor
       <div className={`absolute bg-black bg-opacity-50 rounded-lg p-4 text-white ${
         isMobile ? 'bottom-4 left-4 right-4' : 'bottom-8 right-8'
       }`}>
-        <h3 className={`font-semibold mb-2 ${isMobile ? 'text-sm' : ''}`}>Neural Network Legend</h3>
+        <h3 className={`font-semibold mb-2 ${isMobile ? 'text-sm' : ''}`}></h3>
         <div className={`space-y-1 ${isMobile ? 'text-xs' : 'text-sm'}`}>
           <div className="flex items-center gap-2">
             <div className={`rounded-full bg-blue-500 ${isMobile ? 'w-3 h-3' : 'w-4 h-4'}`}></div>
