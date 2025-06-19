@@ -22,18 +22,18 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex md:items-center md:space-x-6">
-          <Link href="#about" className="text-sm font-medium transition-colors hover:text-primary text-white">
+          {/* <Link href="#about" className="text-sm font-medium transition-colors hover:text-primary text-white">
             About
           </Link>
           <Link href="#projects" className="text-sm font-medium transition-colors hover:text-primary text-white">
             Projects
-          </Link>
+          </Link> */}
           {/* <Link href="#skills" className="text-sm font-medium transition-colors hover:text-primary ">
             Skills
           </Link> */}
-          <Link href="#contact" className="text-sm font-medium transition-colors hover:text-primary text-white">
+          {/* <Link href="#contact" className="text-sm font-medium transition-colors hover:text-primary text-white">
             Contact
-          </Link>
+          </Link> */}
           {/* <ThemeToggle /> */}
           <Button asChild>
             <Link href="#contact" className="text-white">Let&apos;s Connect</Link>

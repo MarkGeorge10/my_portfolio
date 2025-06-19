@@ -1,13 +1,11 @@
 "use client";
 
 
-import Projects from "@/components/Projects";
-import WhyMe from "@/components/why_me";
-import { HeroSection } from "@/components/hero-section";
-import { AboutSection } from "@/components/about-section";
-import { ContactSection } from "@/components/contact-section";
 import { FooterV2 } from "@/components/footerv2";
 import { Navbar } from "@/components/navbar";
+import NeuralNetworkPortfolio from "@/components/NeuralNetworkPortfolio";
+import projectsData from "../data/projectsData.json"; // Adjust path as needed
+import { ContactSectionLight } from "@/components/contact-section-light";
 
 export default function Home() {
   return (
@@ -21,16 +19,20 @@ export default function Home() {
         </section> */}
 {/* <HeaderV2 /> */}
 
-        <HeroSection />
-        <AboutSection />
-         <WhyMe />
+        {/* <HeroSection />
+        <AboutSection /> */}
+         {/* <WhyMe /> */}
 
         {/* <Services /> */}
        
        
-        <Projects />
+        {/* <Projects /> */}
+
+         <div className="w-full h-screen">
+      <NeuralNetworkPortfolio categories={projectsData} />
+    </div>
        
-       <ContactSection />
+       <ContactSectionLight />
       </main>
       <FooterV2 />
     </div>
