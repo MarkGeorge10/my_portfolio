@@ -1,8 +1,13 @@
+
 import React from 'react';
-import { NeuronProps } from '@/types/project';
+import { useDrag } from '@use-gesture/react';
+import { useSpring, animated } from '@react-spring/web';
+import { NeuronProps, Position } from '@/types/project';
 
 interface ExtendedNeuronProps extends NeuronProps {
   isMobile?: boolean;
+  onDrag?: (position: Position) => void;
+  isDraggable?: boolean;
 }
 
 const Neuron: React.FC<ExtendedNeuronProps> = ({ 
@@ -10,8 +15,38 @@ const Neuron: React.FC<ExtendedNeuronProps> = ({
   position, 
   isOutput = false, 
   onClick,
-  isMobile = false 
+  onDrag,
+  isDraggable = false,
+  isMobile = false
 }) => {
+  // Individual neuron spring animation
+  const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
+
+  // Individual neuron drag handler
+  const bind = useDrag(
+    ({ down, movement: [mx, my], event }) => {
+      if (!isDraggable) return;
+      
+      event?.stopPropagation(); // Prevent global drag
+      
+      if (down) {
+        api.start({ x: mx, y: my, immediate: true });
+      } else {
+        // When drag ends, update the position and reset spring
+        if (onDrag) {
+          onDrag({
+            x: position.x + mx,
+            y: position.y + my
+          });
+        }
+        api.start({ x: 0, y: 0 });
+      }
+    },
+    {
+      enabled: isDraggable
+    }
+  );
+
   const getCategoryColor = (categoryId?: number) => {
     const colors = {
       1: 'bg-blue-500',      // AI/ML
@@ -47,19 +82,28 @@ const Neuron: React.FC<ExtendedNeuronProps> = ({
   const categoryId = project ? Math.floor(project.id / 10000) : undefined;
   const offset = getOffset();
 
+  const getCursorStyle = () => {
+    if (isDraggable) return 'cursor-move';
+    return 'cursor-pointer';
+  };
+
   return (
-    <div
-      className={`absolute ${getNeuronSize()} rounded-full border-2 border-white shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-110 hover:shadow-xl ${
+    <animated.div
+      {...(isDraggable ? bind() : {})}
+      className={`absolute ${getNeuronSize()} rounded-full border-2 border-white shadow-lg transform transition-all duration-300 ${
         isOutput ? 'bg-gradient-to-r from-purple-600 to-pink-600' : getCategoryColor(categoryId)
-      } pointer-events-auto`}
+      } pointer-events-auto ${getCursorStyle()}`}
       style={{
         left: position.x - offset,
         top: position.y - offset,
+        x: isDraggable ? x : 0,
+        y: isDraggable ? y : 0,
+        touchAction: isDraggable ? 'none' : 'auto',
       }}
       onClick={onClick}
       title={project?.title || 'Mark Fahim - AI Software Engineer'}
     >
-      <div className="w-full h-full rounded-full flex items-center justify-center">
+      <div className="w-full h-full rounded-full flex items-center justify-center relative">
         {isOutput ? (
           <div className={`${getInnerSize()} rounded-full bg-white flex items-center justify-center ${
             isMobile ? 'text-xs' : 'text-xs'
@@ -73,11 +117,16 @@ const Neuron: React.FC<ExtendedNeuronProps> = ({
         )}
       </div>
       
-      {/* Pulse animation for output neuron */}
+      {/* Pulse animation for output neuron only */}
       {isOutput && (
         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 animate-ping opacity-30"></div>
       )}
-    </div>
+
+      {/* Drag indicator for draggable neurons */}
+      {isDraggable && (
+        <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full opacity-60 animate-pulse"></div>
+      )}
+    </animated.div>
   );
 };
 

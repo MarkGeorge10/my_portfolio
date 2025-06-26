@@ -1,7 +1,16 @@
 import React from 'react';
-import { Button } from '@/components/ui/button';
 import { Project } from '@/types/project';
+import { Button } from '@/components/ui/button';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../components/ui/carousel";
+
 import Image from "next/image";
+
 
 interface ProjectModalProps {
   project: Project | null;
@@ -19,7 +28,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           <div className="flex justify-between items-start mb-4">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-2">{project.title}</h2>
-              <Image src={project.headerIcon} alt="Technology" className="mb-4" />
+              <Image src={project.headerIcon} alt="Technology" className="mb-4" width={80} height={120}/>
             </div>
             <Button
               variant="ghost"
@@ -34,15 +43,28 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
             <p className="text-gray-700 whitespace-pre-line">{project.description}</p>
             
             {project.image && project.image.length > 0 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {project.image.map((img, index) => (
-                  <Image
-                    key={index}
-                    src={img}
-                    alt={`${project.title} screenshot ${index + 1}`}
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                ))}
+              <div className="w-full">
+                <Carousel className="w-full max-w-3xl mx-auto">
+                  <CarouselContent>
+                    {project.image.map((img, index) => (
+                      <CarouselItem key={index}>
+                        <div className="p-1">
+                          <Image
+                            src={img}
+                            alt={`${project.title} screenshot ${index + 1}`}
+                            className="w-full rounded-lg"
+                          />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  {project.image.length > 1 && (
+                    <>
+                      <CarouselPrevious />
+                      <CarouselNext />
+                    </>
+                  )}
+                </Carousel>
               </div>
             )}
             
@@ -68,7 +90,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                       className="inline-block"
                     >
                       {link.icons ? (
-                        <Image src={link.icons} alt="Link" />
+                        <Image src={link.icons} alt="Link" width={80} height={120}/>
                       ) : (
                         <Button variant="outline">View Project</Button>
                       )}
