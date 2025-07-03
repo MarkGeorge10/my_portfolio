@@ -136,10 +136,12 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
 
   const { positions, outputPosition } = calculateBrainPositions();
 
-  // Initialize neuron positions on first render
+  // Initialize neuron positions only on client-side
   useEffect(() => {
-    setNeuronPositions(positions);
-  }, [dimensions]); // Changed dependency to dimensions instead of positions
+    if (isClient) {
+      setNeuronPositions(positions);
+    }
+  }, [dimensions, isClient]); // Added isClient dependency
 
   const handleNeuronClick = (project?: Project) => {
     if (project) {
