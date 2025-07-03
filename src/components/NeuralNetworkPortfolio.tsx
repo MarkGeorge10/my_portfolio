@@ -191,13 +191,15 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
         className="relative"
       >
         {/* Brain Title */}
-        <div className="absolute top-8 left-1/2 transform -translate-x-1/2 z-10 text-center">
+        <div
+          className={`absolute left-1/2 transform -translate-x-1/2 z-10 text-center ${isMobile ? "top-16" : "top-8"}`}
+        >
           <h1
-            className={`font-bold text-white mb-2 ${isMobile ? "text-2xl" : "text-4xl"}`}
+            className={`font-bold text-white mb-2 ${isMobile ? "text-xl" : "text-4xl"}`}
           >
             Portfolio
           </h1>
-          <p className={`text-blue-200 ${isMobile ? "text-sm" : "text-xl"}`}>
+          <p className={`text-blue-200 ${isMobile ? "text-xs" : "text-xl"}`}>
             Mark Fahim - AI Software Engineer
           </p>
         </div>
