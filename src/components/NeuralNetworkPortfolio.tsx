@@ -22,6 +22,7 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
   const [neuronPositions, setNeuronPositions] = useState<{
     [key: number]: Position;
   }>({});
+  const [isClient, setIsClient] = useState(false);
 
   // Spring animation for global drag interaction
   const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
