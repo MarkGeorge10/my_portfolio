@@ -102,21 +102,21 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
       const region = brainRegions[categoryIndex] || brainRegions[0];
 
       category.projects.forEach((project, projectIndex) => {
-        // Tighter clustering within brain regions using deterministic positioning
+        // Better spacing within brain regions using deterministic positioning
         const angle = (projectIndex / category.projects.length) * Math.PI * 2;
         const radiusSeed = project.id * 123 + categoryIndex * 456; // Use project ID as seed
-        const radius = region.radius * (0.2 + seededRandom(radiusSeed) * 0.5); // Deterministic spread
+        const radius = region.radius * (0.4 + seededRandom(radiusSeed) * 0.6); // Increased minimum radius for better spacing
 
         const xSeed = project.id * 789 + projectIndex * 321;
         const ySeed = project.id * 654 + projectIndex * 987;
         const x =
           region.x +
           Math.cos(angle) * radius +
-          (seededRandom(xSeed) - 0.5) * 15; // Deterministic randomness
+          (seededRandom(xSeed) - 0.5) * 25; // Increased randomness spread
         const y =
           region.y +
           Math.sin(angle) * radius +
-          (seededRandom(ySeed) - 0.5) * 15;
+          (seededRandom(ySeed) - 0.5) * 25;
 
         positions[project.id] = { x, y };
       });
