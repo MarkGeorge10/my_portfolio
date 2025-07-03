@@ -202,79 +202,81 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
           </p>
         </div>
 
-        {/* SVG for brain connections */}
-        <svg
-          className="absolute inset-0 w-full h-full pointer-events-none"
-          style={{ width: dimensions.width, height: dimensions.height }}
-        >
-          {/* Neural connections between nearby neurons */}
-          {Object.entries(currentPositions).map(([projectId, position]) => {
-            return Object.entries(currentPositions).map(
-              ([otherProjectId, otherPosition]) => {
-                if (projectId !== otherProjectId) {
-                  const distance = Math.sqrt(
-                    Math.pow(position.x - otherPosition.x, 2) +
-                      Math.pow(position.y - otherPosition.y, 2),
-                  );
-                  // Only connect nearby neurons (brain-like connectivity) - increased threshold for better spacing
-                  if (distance < 150) {
-                    return (
-                      <line
-                        key={`connection-${projectId}-${otherProjectId}`}
-                        x1={position.x}
-                        y1={position.y}
-                        x2={otherPosition.x}
-                        y2={otherPosition.y}
-                        stroke="url(#brainGradient)"
-                        strokeWidth={isMobile ? "0.5" : "1"}
-                        opacity="0.3"
-                      />
+        {/* SVG for brain connections - only render on client to prevent hydration mismatch */}
+        {isClient && (
+          <svg
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            style={{ width: dimensions.width, height: dimensions.height }}
+          >
+            {/* Neural connections between nearby neurons */}
+            {Object.entries(currentPositions).map(([projectId, position]) => {
+              return Object.entries(currentPositions).map(
+                ([otherProjectId, otherPosition]) => {
+                  if (projectId !== otherProjectId) {
+                    const distance = Math.sqrt(
+                      Math.pow(position.x - otherPosition.x, 2) +
+                        Math.pow(position.y - otherPosition.y, 2),
                     );
+                    // Only connect nearby neurons (brain-like connectivity) - increased threshold for better spacing
+                    if (distance < 150) {
+                      return (
+                        <line
+                          key={`connection-${projectId}-${otherProjectId}`}
+                          x1={position.x}
+                          y1={position.y}
+                          x2={otherPosition.x}
+                          y2={otherPosition.y}
+                          stroke="url(#brainGradient)"
+                          strokeWidth={isMobile ? "0.5" : "1"}
+                          opacity="0.3"
+                        />
+                      );
+                    }
                   }
-                }
-                return null;
-              },
-            );
-          })}
+                  return null;
+                },
+              );
+            })}
 
-          {/* Connections to central output */}
-          {Object.entries(currentPositions).map(([projectId, position]) => (
-            <line
-              key={`output-connection-${projectId}`}
-              x1={position.x}
-              y1={position.y}
-              x2={outputPosition.x}
-              y2={outputPosition.y}
-              stroke="url(#outputGradient)"
-              strokeWidth={isMobile ? "1" : "2"}
-              opacity="0.4"
-            />
-          ))}
+            {/* Connections to central output */}
+            {Object.entries(currentPositions).map(([projectId, position]) => (
+              <line
+                key={`output-connection-${projectId}`}
+                x1={position.x}
+                y1={position.y}
+                x2={outputPosition.x}
+                y2={outputPosition.y}
+                stroke="url(#outputGradient)"
+                strokeWidth={isMobile ? "1" : "2"}
+                opacity="0.4"
+              />
+            ))}
 
-          {/* Gradient definitions */}
-          <defs>
-            <linearGradient
-              id="brainGradient"
-              x1="0%"
-              y1="0%"
-              x2="100%"
-              y2="0%"
-            >
-              <stop offset="0%" stopColor="#60A5FA" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#A78BFA" stopOpacity="0.6" />
-            </linearGradient>
-            <linearGradient
-              id="outputGradient"
-              x1="0%"
-              y1="0%"
-              x2="100%"
-              y2="0%"
-            >
-              <stop offset="0%" stopColor="#EC4899" />
-              <stop offset="100%" stopColor="#8B5CF6" />
-            </linearGradient>
-          </defs>
-        </svg>
+            {/* Gradient definitions */}
+            <defs>
+              <linearGradient
+                id="brainGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
+                <stop offset="0%" stopColor="#60A5FA" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#A78BFA" stopOpacity="0.6" />
+              </linearGradient>
+              <linearGradient
+                id="outputGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
+                <stop offset="0%" stopColor="#EC4899" />
+                <stop offset="100%" stopColor="#8B5CF6" />
+              </linearGradient>
+            </defs>
+          </svg>
+        )}
 
         {/* Neurons for projects */}
         {categories.map((category) =>
