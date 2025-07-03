@@ -377,10 +377,10 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
 
       {/* Mobile drag instruction */}
       {isMobile && (
-        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 text-white text-center">
-          <p className="text-xs opacity-75">
-            🧠 Drag neurons to move them in the brain space
-          </p>
+        <div className="absolute top-32 left-1/2 transform -translate-x-1/2 text-white text-center px-4 z-10">
+          <div className="bg-black bg-opacity-50 rounded-lg px-3 py-2 backdrop-blur-sm">
+            <p className="text-xs opacity-90">🧠 Drag neurons to explore</p>
+          </div>
         </div>
       )}
     </div>
