@@ -38,6 +38,8 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
   });
 
   useEffect(() => {
+    setIsClient(true);
+
     const updateDimensions = () => {
       const isMobileDevice = window.innerWidth < 768;
       setIsMobile(isMobileDevice);
