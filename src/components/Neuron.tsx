@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useDrag } from "@use-gesture/react";
 import { useSpring, animated } from "@react-spring/web";
 import { NeuronProps, Position } from "@/types/project";
@@ -22,9 +22,12 @@ const Neuron: React.FC<ExtendedNeuronProps> = ({
   // Individual neuron spring animation
   const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
 
-  // Hover timer ref
+  // Hover timer ref and progress state
   const hoverTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isDraggingRef = useRef(false);
+  const [hoverProgress, setHoverProgress] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+  const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   // Individual neuron drag handler
   const bind = useDrag(
@@ -35,10 +38,17 @@ const Neuron: React.FC<ExtendedNeuronProps> = ({
 
       if (down) {
         isDraggingRef.current = true;
-        // Clear hover timer when dragging starts
+        setIsHovering(false);
+        setHoverProgress(0);
+
+        // Clear hover timers when dragging starts
         if (hoverTimerRef.current) {
           clearTimeout(hoverTimerRef.current);
           hoverTimerRef.current = null;
+        }
+        if (progressIntervalRef.current) {
+          clearInterval(progressIntervalRef.current);
+          progressIntervalRef.current = null;
         }
         api.start({ x: mx, y: my, immediate: true });
       } else {
@@ -96,36 +106,67 @@ const Neuron: React.FC<ExtendedNeuronProps> = ({
   const categoryId = project ? Math.floor(project.id / 10000) : undefined;
   const offset = getOffset();
 
-  // Hover handlers
+  // Hover handlers with progress animation
   const handleMouseEnter = () => {
     if (!project || !onHover || isDraggingRef.current) return;
 
-    // Clear any existing timer
+    setIsHovering(true);
+    setHoverProgress(0);
+
+    // Clear any existing timers
     if (hoverTimerRef.current) {
       clearTimeout(hoverTimerRef.current);
     }
+    if (progressIntervalRef.current) {
+      clearInterval(progressIntervalRef.current);
+    }
 
-    // Set a new 2-second timer
+    // Start progress animation
+    const startTime = Date.now();
+    progressIntervalRef.current = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / 2000, 1) * 100;
+      setHoverProgress(progress);
+
+      if (progress >= 100) {
+        clearInterval(progressIntervalRef.current!);
+        progressIntervalRef.current = null;
+      }
+    }, 16); // ~60fps
+
+    // Set the 2-second timer for modal opening
     hoverTimerRef.current = setTimeout(() => {
       if (!isDraggingRef.current) {
         onHover();
+        setIsHovering(false);
+        setHoverProgress(0);
       }
     }, 2000);
   };
 
   const handleMouseLeave = () => {
-    // Clear the timer when mouse leaves
+    setIsHovering(false);
+    setHoverProgress(0);
+
+    // Clear all timers when mouse leaves
     if (hoverTimerRef.current) {
       clearTimeout(hoverTimerRef.current);
       hoverTimerRef.current = null;
     }
+    if (progressIntervalRef.current) {
+      clearInterval(progressIntervalRef.current);
+      progressIntervalRef.current = null;
+    }
   };
 
-  // Cleanup timer on unmount
+  // Cleanup timers on unmount
   useEffect(() => {
     return () => {
       if (hoverTimerRef.current) {
         clearTimeout(hoverTimerRef.current);
+      }
+      if (progressIntervalRef.current) {
+        clearInterval(progressIntervalRef.current);
       }
     };
   }, []);
@@ -138,7 +179,11 @@ const Neuron: React.FC<ExtendedNeuronProps> = ({
   return (
     <animated.div
       {...(isDraggable ? bind() : {})}
-      className={`absolute ${getNeuronSize()} rounded-full border-2 border-white shadow-lg transform transition-all duration-300 ${
+      className={`absolute ${getNeuronSize()} rounded-full border-2 transition-all duration-300 ${
+        isHovering
+          ? "border-yellow-400 shadow-xl scale-110"
+          : "border-white shadow-lg"
+      } ${
         isOutput
           ? "bg-gradient-to-r from-purple-600 to-pink-600"
           : getCategoryColor(categoryId)
@@ -180,9 +225,43 @@ const Neuron: React.FC<ExtendedNeuronProps> = ({
         <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 animate-ping opacity-30"></div>
       )}
 
+      {/* Hover progress ring */}
+      {isHovering && project && (
+        <div className="absolute inset-0 rounded-full">
+          <svg className="w-full h-full -rotate-90" viewBox="0 0 24 24">
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              fill="none"
+              stroke="rgba(250, 204, 21, 0.3)"
+              strokeWidth="2"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              fill="none"
+              stroke="rgb(250, 204, 21)"
+              strokeWidth="2"
+              strokeDasharray="62.83"
+              strokeDashoffset={62.83 - (62.83 * hoverProgress) / 100}
+              className="transition-all duration-75 ease-linear"
+            />
+          </svg>
+        </div>
+      )}
+
       {/* Drag indicator for draggable neurons */}
-      {isDraggable && (
+      {isDraggable && !isHovering && (
         <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full opacity-60 animate-pulse"></div>
+      )}
+
+      {/* Hover instruction tooltip */}
+      {isHovering && project && (
+        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-75 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-20">
+          Hold to view details...
+        </div>
       )}
     </animated.div>
   );
