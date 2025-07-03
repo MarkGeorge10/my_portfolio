@@ -25,6 +25,7 @@ const Neuron: React.FC<ExtendedNeuronProps> = ({
   // Hover timer ref and progress state
   const hoverTimerRef = useRef<NodeJS.Timeout | null>(null);
   const isDraggingRef = useRef(false);
+  const hasDraggedRef = useRef(false);
   const [hoverProgress, setHoverProgress] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -38,6 +39,7 @@ const Neuron: React.FC<ExtendedNeuronProps> = ({
 
       if (down) {
         isDraggingRef.current = true;
+        hasDraggedRef.current = false;
         setIsHovering(false);
         setHoverProgress(0);
 
@@ -52,18 +54,31 @@ const Neuron: React.FC<ExtendedNeuronProps> = ({
         }
         api.start({ x: mx, y: my, immediate: true });
       } else {
+        // Mark that a drag operation completed if there was movement
+        const dragDistance = Math.sqrt(mx * mx + my * my);
+        if (dragDistance > 5) {
+          // Only consider it a drag if moved more than 5px
+          hasDraggedRef.current = true;
+        }
+
         // When drag ends, update the position and reset spring
-        if (onDrag) {
+        if (onDrag && dragDistance > 5) {
           onDrag({
             x: position.x + mx,
             y: position.y + my,
           });
         }
         api.start({ x: 0, y: 0 });
+
         // Reset dragging state after a short delay
         setTimeout(() => {
           isDraggingRef.current = false;
         }, 100);
+
+        // Reset drag completion flag after a longer delay to prevent click
+        setTimeout(() => {
+          hasDraggedRef.current = false;
+        }, 200);
       }
     },
     {
@@ -171,6 +186,21 @@ const Neuron: React.FC<ExtendedNeuronProps> = ({
     };
   }, []);
 
+  // Click handler that prevents modal opening after drag
+  const handleClick = (e: React.MouseEvent) => {
+    // Prevent modal opening if a drag operation just completed
+    if (hasDraggedRef.current) {
+      e.preventDefault();
+      e.stopPropagation();
+      return;
+    }
+
+    // Call the original onClick handler
+    if (onClick) {
+      onClick();
+    }
+  };
+
   const getCursorStyle = () => {
     if (isDraggable) return "cursor-move";
     return "cursor-pointer";
@@ -195,7 +225,7 @@ const Neuron: React.FC<ExtendedNeuronProps> = ({
         y: isDraggable ? y : 0,
         touchAction: isDraggable ? "none" : "auto",
       }}
-      onClick={onClick}
+      onClick={handleClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       title={project?.title || "Mark Fahim - AI Software Engineer"}
