@@ -1,19 +1,17 @@
 export interface Project {
-    id: number;
+  id: number;
   title: string;
   description: string;
   image: string[];
   video: string;
   linksmodel: LinkModel[];
   headerIcon: string;
+}
 
-  }
-
-  export interface LinkModel {
+export interface LinkModel {
   icons: string;
   links: string;
 }
-
 
 export interface Category {
   id: number;
@@ -32,4 +30,5 @@ export interface NeuronProps {
   position: Position;
   isOutput?: boolean;
   onClick?: () => void;
+  onHover?: () => void;
 }

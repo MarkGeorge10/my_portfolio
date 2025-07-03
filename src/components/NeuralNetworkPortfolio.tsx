@@ -150,6 +150,11 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
     }
   };
 
+  const handleNeuronHover = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
   const handleOutputClick = () => {
     setIsPersonalModalOpen(true);
   };
@@ -288,6 +293,7 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
               project={project}
               position={currentPositions[project.id] || positions[project.id]}
               onClick={() => handleNeuronClick(project)}
+              onHover={() => handleNeuronHover(project)}
               onDrag={(newPosition) =>
                 handleNeuronDrag(project.id, newPosition)
               }
@@ -351,7 +357,7 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
             </div>
           </div>
           <p className="mt-2 opacity-75 text-xs">
-            Click neurons for details • Drag neurons to move them
+            Hover 2s for details • Click for instant view ��� Drag to move
           </p>
         </div>
       )}
@@ -372,7 +378,9 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
       {isMobile && (
         <div className="absolute top-32 left-1/2 transform -translate-x-1/2 text-white text-center px-4 z-10">
           <div className="bg-black bg-opacity-50 rounded-lg px-3 py-2 backdrop-blur-sm">
-            <p className="text-xs opacity-90">🧠 Drag neurons to explore</p>
+            <p className="text-xs opacity-90">
+              🧠 Tap or drag neurons to explore
+            </p>
           </div>
         </div>
       )}
