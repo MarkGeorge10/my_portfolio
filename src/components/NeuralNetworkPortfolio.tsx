@@ -363,7 +363,7 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
             onClick={handleOutputClick}
             className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
           >
-            🚀 Let's Connect
+            🚀 Let&aposs Connect
           </button>
         </div>
       )}
