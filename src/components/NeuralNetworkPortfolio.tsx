@@ -150,6 +150,11 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
     }
   };
 
+  const handleNeuronHover = (project: Project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
   const handleOutputClick = () => {
     setIsPersonalModalOpen(true);
   };
@@ -288,6 +293,7 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
               project={project}
               position={currentPositions[project.id] || positions[project.id]}
               onClick={() => handleNeuronClick(project)}
+              onHover={() => handleNeuronHover(project)}
               onDrag={(newPosition) =>
                 handleNeuronDrag(project.id, newPosition)
               }
