@@ -1,6 +1,6 @@
-import React from 'react';
-import { Project } from '@/types/project';
-import { Button } from '@/components/ui/button';
+import React from "react";
+import { Project } from "@/types/project";
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
@@ -11,14 +11,17 @@ import {
 
 import Image from "next/image";
 
-
 interface ProjectModalProps {
   project: Project | null;
   isOpen: boolean;
   onClose: () => void;
 }
 
-const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
+const ProjectModal: React.FC<ProjectModalProps> = ({
+  project,
+  isOpen,
+  onClose,
+}) => {
   if (!isOpen || !project) return null;
 
   return (
@@ -27,8 +30,16 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
         <div className="p-6">
           <div className="flex justify-between items-start mb-4">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">{project.title}</h2>
-              <Image src={project.headerIcon} alt="Technology" className="mb-4" width={80} height={120}/>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                {project.title}
+              </h2>
+              <Image
+                src={project.headerIcon}
+                alt="Technology"
+                className="mb-4"
+                width={80}
+                height={120}
+              />
             </div>
             <Button
               variant="ghost"
@@ -38,10 +49,12 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
               ✕
             </Button>
           </div>
-          
+
           <div className="space-y-4">
-            <p className="text-gray-700 whitespace-pre-line">{project.description}</p>
-            
+            <p className="text-gray-700 whitespace-pre-line">
+              {project.description}
+            </p>
+
             {project.image && project.image.length > 0 && (
               <div className="w-full">
                 <Carousel className="w-full max-w-3xl mx-auto">
@@ -52,7 +65,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                           <Image
                             src={img}
                             alt={`${project.title} screenshot ${index + 1}`}
-                            className="w-full rounded-lg"
+                            width={800}
+                            height={600}
+                            className="w-full rounded-lg object-cover"
                           />
                         </div>
                       </CarouselItem>
@@ -67,7 +82,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                 </Carousel>
               </div>
             )}
-            
+
             {project.video && (
               <video
                 controls
@@ -77,26 +92,32 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                 Your browser does not support the video tag.
               </video>
             )}
-            
+
             {project.linksmodel && project.linksmodel.length > 0 && (
               <div className="flex flex-wrap gap-2 mt-4">
-                {project.linksmodel.map((link, index) => (
-                  link.links && (
-                    <a
-                      key={index}
-                      href={link.links}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block"
-                    >
-                      {link.icons ? (
-                        <Image src={link.icons} alt="Link" width={80} height={120}/>
-                      ) : (
-                        <Button variant="outline">View Project</Button>
-                      )}
-                    </a>
-                  )
-                ))}
+                {project.linksmodel.map(
+                  (link, index) =>
+                    link.links && (
+                      <a
+                        key={index}
+                        href={link.links}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block"
+                      >
+                        {link.icons ? (
+                          <Image
+                            src={link.icons}
+                            alt="Link"
+                            width={80}
+                            height={120}
+                          />
+                        ) : (
+                          <Button variant="outline">View Project</Button>
+                        )}
+                      </a>
+                    ),
+                )}
               </div>
             )}
           </div>
