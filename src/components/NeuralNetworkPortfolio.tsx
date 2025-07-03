@@ -319,63 +319,54 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
         onClose={closePersonalModal}
       />
 
-      {/* Legend - Brain themed */}
-      <div
-        className={`absolute bg-black bg-opacity-60 rounded-lg p-4 text-white backdrop-blur-sm ${
-          isMobile ? "bottom-4 left-4 right-4" : "bottom-8 right-8"
-        }`}
-      >
-        {/* 🧠 Neural Brain Legend */}
-        <h3 className={`font-semibold mb-2 ${isMobile ? "text-sm" : ""}`}>
-          Projects
-        </h3>
-        <div className={`space-y-1 ${isMobile ? "text-xs" : "text-sm"}`}>
-          <div className="flex items-center gap-2">
-            <div
-              className={`rounded-full bg-blue-500 ${isMobile ? "w-3 h-3" : "w-4 h-4"}`}
-            ></div>
-            <span>AI/Machine Learning </span>
-            {/* (Frontal Lobe) */}
+      {/* Legend - Brain themed - Hidden on mobile */}
+      {!isMobile && (
+        <div className="absolute bg-black bg-opacity-60 rounded-lg p-4 text-white backdrop-blur-sm bottom-8 right-8">
+          {/* 🧠 Neural Brain Legend */}
+          <h3 className="font-semibold mb-2">Projects</h3>
+          <div className="space-y-1 text-sm">
+            <div className="flex items-center gap-2">
+              <div className="rounded-full bg-blue-500 w-4 h-4"></div>
+              <span>AI/Machine Learning </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="rounded-full bg-green-500 w-4 h-4"></div>
+              <span>Backend Development </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="rounded-full bg-purple-500 w-4 h-4"></div>
+              <span>Frontend Development </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="rounded-full bg-orange-500 w-4 h-4"></div>
+              <span>Mobile Development </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="rounded-full bg-red-500 w-4 h-4"></div>
+              <span>HubSpot Automation </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="rounded-full bg-gradient-to-r from-purple-600 to-pink-600 w-4 h-4"></div>
+              <span>Central Processing (You)</span>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <div
-              className={`rounded-full bg-green-500 ${isMobile ? "w-3 h-3" : "w-4 h-4"}`}
-            ></div>
-            <span>Backend Development </span>
-            {/* (Parietal Lobe) */}
-          </div>
-          <div className="flex items-center gap-2">
-            <div
-              className={`rounded-full bg-purple-500 ${isMobile ? "w-3 h-3" : "w-4 h-4"}`}
-            ></div>
-            <span>Frontend Development </span>
-            {/* (Temporal Lobe) */}
-          </div>
-          <div className="flex items-center gap-2">
-            <div
-              className={`rounded-full bg-orange-500 ${isMobile ? "w-3 h-3" : "w-4 h-4"}`}
-            ></div>
-            <span>Mobile Development </span>
-            {/* (Occipital Lobe) */}
-          </div>
-          <div className="flex items-center gap-2">
-            <div
-              className={`rounded-full bg-red-500 ${isMobile ? "w-3 h-3" : "w-4 h-4"}`}
-            ></div>
-            <span>HubSpot Automation </span>
-            {/* (Cerebellum) */}
-          </div>
-          <div className="flex items-center gap-2">
-            <div
-              className={`rounded-full bg-gradient-to-r from-purple-600 to-pink-600 ${isMobile ? "w-3 h-3" : "w-4 h-4"}`}
-            ></div>
-            <span>Central Processing (You)</span>
-          </div>
+          <p className="mt-2 opacity-75 text-xs">
+            Click neurons for details • Drag neurons to move them
+          </p>
         </div>
-        <p className={`mt-2 opacity-75 ${isMobile ? "text-xs" : "text-xs"}`}>
-          Click neurons for details • Drag neurons to move them
-        </p>
-      </div>
+      )}
+
+      {/* Mobile Let's Connect Button */}
+      {isMobile && (
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20">
+          <button
+            onClick={handleOutputClick}
+            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
+          >
+            🚀 Let's Connect
+          </button>
+        </div>
+      )}
 
       {/* Mobile drag instruction */}
       {isMobile && (
