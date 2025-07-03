@@ -211,8 +211,8 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
                     Math.pow(position.x - otherPosition.x, 2) +
                       Math.pow(position.y - otherPosition.y, 2),
                   );
-                  // Only connect nearby neurons (brain-like connectivity)
-                  if (distance < 120) {
+                  // Only connect nearby neurons (brain-like connectivity) - increased threshold for better spacing
+                  if (distance < 150) {
                     return (
                       <line
                         key={`connection-${projectId}-${otherProjectId}`}
