@@ -73,29 +73,29 @@ const NeuralNetworkPortfolio: React.FC<NeuralNetworkPortfolioProps> = ({
     const brainWidth = Math.min(dimensions.width * 0.6, 600);
     const brainHeight = Math.min(dimensions.height * 0.6, 400);
 
-    // Define brain regions for each category with tighter clustering
+    // Define brain regions for each category with better spacing
     const brainRegions = [
       {
-        x: centerX - brainWidth * 0.3,
-        y: centerY - brainHeight * 0.2,
-        radius: brainWidth * 0.12,
+        x: centerX - brainWidth * 0.35,
+        y: centerY - brainHeight * 0.25,
+        radius: brainWidth * 0.18,
       }, // AI/ML - frontal lobe
       {
-        x: centerX + brainWidth * 0.3,
-        y: centerY - brainHeight * 0.2,
-        radius: brainWidth * 0.12,
+        x: centerX + brainWidth * 0.35,
+        y: centerY - brainHeight * 0.25,
+        radius: brainWidth * 0.18,
       }, // Backend - parietal lobe
       {
-        x: centerX - brainWidth * 0.2,
-        y: centerY + brainHeight * 0.1,
-        radius: brainWidth * 0.1,
+        x: centerX - brainWidth * 0.25,
+        y: centerY + brainHeight * 0.15,
+        radius: brainWidth * 0.15,
       }, // Frontend - temporal lobe
       {
-        x: centerX + brainWidth * 0.2,
-        y: centerY + brainHeight * 0.1,
-        radius: brainWidth * 0.1,
+        x: centerX + brainWidth * 0.25,
+        y: centerY + brainHeight * 0.15,
+        radius: brainWidth * 0.15,
       }, // Mobile - occipital lobe
-      { x: centerX, y: centerY - brainHeight * 0.3, radius: brainWidth * 0.08 }, // HubSpot - cerebellum
+      { x: centerX, y: centerY - brainHeight * 0.4, radius: brainWidth * 0.12 }, // HubSpot - cerebellum
     ];
 
     categories.forEach((category, categoryIndex) => {
